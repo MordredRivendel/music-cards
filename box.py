@@ -83,7 +83,7 @@ while True:
                                 client.status()['volume']
                         elif plist=='mute':                 #volume mute
                                 client.setvol(0)
-			elif '.m3u' in plist:                 #open m3u-Playlists
+			elif 'm3u' in plist:                 #open m3u-Playlists
                                 playlist(client, plist)
                         else:
                                 play(client, plist)
