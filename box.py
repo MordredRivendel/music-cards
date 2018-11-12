@@ -30,6 +30,17 @@ def play(client, plist):
 	except:
 		print 'Could not play playlist %s' % plist 
 
+def playlist(client, plist):
+	try:
+		client.stop()
+		client.clear()
+		client.load(plist)
+		if re.search('playlist',plist):
+			client.shuffle()
+		client.play()
+	except:
+		print 'Could not play playlist %s' % plist 
+		
 reader = Reader()
 cardList = CardList()
 
@@ -69,6 +80,8 @@ while True:
                                 client.status()['volume']
                         elif plist=='mute':                 #volume mute
                                 client.setvol(0)
+			elif plist.endswith('m3u'):                 #open m3u-Playlists
+                                playlist(client, plist)
                         else:
                                 play(client, plist)
 client.close()
