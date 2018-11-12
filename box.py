@@ -46,7 +46,13 @@ while True:
 			if plist=='pause':
 				client.pause()
 			else:
-				play(client, plist)
+				if plist=='next':
+					client.next()
+				else:
+					if plist=='previous':
+						client.previous()
+					else:
+						play(client, plist)
 			client.close()
 	except KeyboardInterrupt:
 		sys.exit(0)
