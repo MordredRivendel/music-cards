@@ -36,8 +36,6 @@ def playlist(client, plist):
 		client.stop()
 		client.clear()
 		client.load(plist)
-		if re.search('playlist',plist):
-			client.shuffle()
 		client.play()
 		print 'playlist'
 	except:
