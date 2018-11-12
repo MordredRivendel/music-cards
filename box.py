@@ -84,7 +84,7 @@ while True:
                                 playlist(client, plist)
                         else:
                                 play(client, plist)
-client.close()
+			client.close()
 	except KeyboardInterrupt:
 		sys.exit(0)
 	except:
