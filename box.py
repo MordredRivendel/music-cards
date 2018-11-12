@@ -53,6 +53,7 @@ while True:
 		print 'Read card', card
 		plist = cardList.getPlaylist(card)
 		print 'Playlist', plist
+		print plist.contains('m3u')
 		if plist != '':
 			client = connectMPD()
 			if plist=='pause':
