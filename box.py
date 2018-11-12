@@ -27,6 +27,7 @@ def play(client, plist):
 		if re.search('playlist',plist):
 			client.shuffle()
 		client.play()
+		print 'play'
 	except:
 		print 'Could not play playlist %s' % plist 
 
@@ -38,6 +39,7 @@ def playlist(client, plist):
 		if re.search('playlist',plist):
 			client.shuffle()
 		client.play()
+		print 'playlist'
 	except:
 		print 'Could not play playlist %s' % plist 
 		
@@ -52,6 +54,7 @@ while True:
 		print 'Read card', card
 		plist = cardList.getPlaylist(card)
 		print 'Playlist', plist
+		print '.m3u' in plist
 		if plist != '':
 			client = connectMPD()
 			if plist=='pause':
@@ -80,7 +83,7 @@ while True:
                                 client.status()['volume']
                         elif plist=='mute':                 #volume mute
                                 client.setvol(0)
-			elif plist.endswith('m3u'):                 #open m3u-Playlists
+			elif '.m3u' in plist:                 #open m3u-Playlists
                                 playlist(client, plist)
                         else:
                                 play(client, plist)
