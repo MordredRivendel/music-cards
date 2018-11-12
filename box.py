@@ -38,6 +38,7 @@ def playlist(client, plist):
 		if re.search('playlist',plist):
 			client.shuffle()
 		client.play()
+		print 'play playlist'
 	except:
 		print 'Could not play playlist %s' % plist 
 		
