@@ -45,13 +45,33 @@ while True:
 			client = connectMPD()
 			if plist=='pause':
 				client.pause()
-			elif plist=='next':
-				client.next()
-			elif plist=='previous':
-				client.previous()
-			else:
-				play(client, plist)
-			client.close()
+			elif plist=='next':                 #next song
+                                client.next()
+                        elif plist=='play':                 #play song
+                                client.play()
+                        elif plist=='previous':             #previous song
+                                client.previous()
+                        elif plist=='shuffle':              #turn on/off shuffle
+                                client.shuffle()
+                        elif plist=='voldown':              #volume down in steps
+                                client.status()['volume']
+                                client.status()['state']
+                                level = int(client.status()['volume']) - 10 #change to desired amount for decreasing volume
+                                level = max(min(level, 100), 0)
+                                client.setvol(level)
+                                client.status()['volume']
+                        elif plist=='volup':                #volume up in steps
+                                client.status()['volume']
+                                client.status()['state']
+                                level = int(client.status()['volume']) + 10 #change to desired amount for increasing volume
+                                level = max(min(level, 100), 0)
+                                client.setvol(level)
+                                client.status()['volume']
+                        elif plist=='mute':                 #volume mute
+                                client.setvol(0)
+                        else:
+                                play(client, plist)
+client.close()
 	except KeyboardInterrupt:
 		sys.exit(0)
 	except:
