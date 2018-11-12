@@ -29,7 +29,7 @@ def play(client, plist):
 		client.play()
 		print 'play'
 	except:
-		print 'Could not play playlist %s' % plist 
+		print 'Could not play %s' % plist 
 
 def playlist(client, plist):
 	try:
