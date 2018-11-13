@@ -81,10 +81,10 @@ while True:
                                 client.status()['volume']
                         elif plist=='mute':                 #volume mute
                                 client.setvol(0)
-			elif plist=='Afternoon':                 #open m3u-Playlists
-                                playlist(client, plist)
-                        else:
+			elif '://' in plist:                 #URI
                                 play(client, plist)
+                        else:					# open Playlist
+                                playlist(client, plist)
 			client.close()
 	except KeyboardInterrupt:
 		sys.exit(0)
