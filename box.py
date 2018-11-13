@@ -81,7 +81,7 @@ while True:
                                 client.status()['volume']
                         elif plist=='mute':                 #volume mute
                                 client.setvol(0)
-			elif '://' in plist:                 #URI
+			elif ':' in plist:                 #URI
                                 play(client, plist)
                         else:					# open Playlist
                                 playlist(client, plist)
