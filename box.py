@@ -51,6 +51,7 @@ if autostart != '':
 	client.stop()
 	client.clear()
 	client.add(autostart)
+	client.play()
 	client.close()
 
 while True:
