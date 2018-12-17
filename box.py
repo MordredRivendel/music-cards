@@ -90,10 +90,3 @@ while True:
 		sys.exit(0)
 	except:
 pass
-#autostart = '/var/lib/mopidy/network/music/start.mp3'    # autostart funktion
-#if autostart != '':
-	#client = connectMPD()
-	#client.stop()
-	#client.clear()
-	#client.add(autostart)
-	#client.close()
