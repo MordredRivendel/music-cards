@@ -7,7 +7,6 @@ from Reader import Reader
 import sys
 
 
-
 def connectMPD():
 	try:
 		client = MPDClient()               # create client object
@@ -45,13 +44,6 @@ def playlist(client, plist):
 reader = Reader()
 cardList = CardList()
 
-#autostart = '/var/lib/mopidy/network/music/start.mp3'    # autostart funktion
-#if autostart != '':
-	#client = connectMPD()
-	#client.stop()
-	#client.clear()
-	#client.add(autostart)
-	#client.close()
 print 'Ready: place a card on top of the reader'
 
 while True:
@@ -97,4 +89,12 @@ while True:
 	except KeyboardInterrupt:
 		sys.exit(0)
 	except:
-		pass
+pass
+#autostart = '/var/lib/mopidy/network/music/start.mp3'    # autostart funktion
+#if autostart != '':
+	#client = connectMPD()
+	#client.stop()
+	#client.clear()
+	#client.add(autostart)
+	#client.close()
+print 'Ready: place a card on top of the reader'
