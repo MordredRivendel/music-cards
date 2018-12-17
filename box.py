@@ -88,5 +88,5 @@ while True:
 			client.close()
 	except KeyboardInterrupt:
 		sys.exit(0)
-	except:
-pass
+except:
+	pass
