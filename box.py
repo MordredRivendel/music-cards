@@ -45,13 +45,13 @@ def playlist(client, plist):
 reader = Reader()
 cardList = CardList()
 
-autostart = '/var/lib/mopidy/network/music/start.mp3'    # autostart funktion
-if autostart != '':
-	client = connectMPD()
-	client.stop()
-	client.clear()
-	client.add(autostart)
-	client.close()
+#autostart = '/var/lib/mopidy/network/music/start.mp3'    # autostart funktion
+#if autostart != '':
+	#client = connectMPD()
+	#client.stop()
+	#client.clear()
+	#client.add(autostart)
+	#client.close()
 print 'Ready: place a card on top of the reader'
 
 while True:
