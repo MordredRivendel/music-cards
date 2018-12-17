@@ -97,4 +97,3 @@ pass
 	#client.clear()
 	#client.add(autostart)
 	#client.close()
-print 'Ready: place a card on top of the reader'
