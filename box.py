@@ -6,6 +6,12 @@ from CardList import CardList
 from Reader import Reader
 import sys
 
+autostart = '/var/lib/mopidy/network/music/start.mp3'    # autostart funktion
+if autostart != '':
+	client = connectMPD()
+	client.stop()
+	client.clear()
+	client.add(autostart)
 
 def connectMPD():
 	try:
@@ -43,6 +49,7 @@ def playlist(client, plist):
 		
 reader = Reader()
 cardList = CardList()
+
 
 print 'Ready: place a card on top of the reader'
 
