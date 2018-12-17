@@ -45,7 +45,7 @@ reader = Reader()
 cardList = CardList()
 
 print 'Ready: place a card on top of the reader'
-autostart = 'file://var/lib/mopidy/network/music/start.mp3'    # autostart funktion
+autostart = 'file:///var/lib/mopidy/network/start.mp3'    # autostart funktion
 if autostart != '':
 	client = connectMPD()
 	client.stop()
